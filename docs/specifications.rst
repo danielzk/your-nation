@@ -69,20 +69,20 @@ Creación
 --------
 
 * Permitir a los Creadores crear políticos con la siguiente información:
-    - Nombre (obligatorio)
-    - Apellido (obligatorio)
-    - Foto (obligatorio)
-    - Ciudad
-    - Partido político
-    - Cargo actual
-    - Cargos anteriores
-    - Es candidato
-        - No (por defecto)
-        - Sí
-            - Cargo
-            - Fecha de elección
-    - Fecha de nacimiento
-    - Acerca de (obligatorio)
+  - Nombre (obligatorio)
+  - Apellido (obligatorio)
+  - Foto (obligatorio)
+  - Ciudad
+  - Partido político
+  - Cargo actual
+  - Cargos anteriores
+  - Es candidato
+    - No (por defecto)
+    - Sí
+      - Cargo
+      - Fecha de elección
+  - Fecha de nacimiento
+  - Acerca de (obligatorio)
 * Políticos con más de 25 calificaciones pasan a tener edición protegida.
 * Solo Guardianes pueden editar un político con edición protegida.
 * Un Creador puede editar políticos de su país que no tengan edición protegida.
@@ -116,10 +116,10 @@ Creación
 --------
 
 * Permitir a los Creadores crear partidos con la siguiente información:
-    - Nombre (obligatorio)
-    - Foto
-    - Acerca de (obligatorio)
-    - Partidos aliados
+  - Nombre (obligatorio)
+  - Foto
+  - Acerca de (obligatorio)
+  - Partidos aliados
 * Partidos con más de 25 calificaciones pasan a tener edición protegida.
 * Solo Guardianes pueden editar un partido con edición protegida.
 * Un Creador puede editar partidos de su país que no tengan edición protegida.
@@ -167,10 +167,10 @@ Reportes
 ========
 
 * Permitir al usuario reportar un contenido con las siguientes opciones:
-    - Spam
-    - Información falsa
-    - Violenta/ofensiva
-    - Otro
+  - Spam
+  - Información falsa
+  - Violenta/ofensiva
+  - Otro
 * Permitir agregar un comentario adicional.
 * Un miembro del Staff debe revisar el reporte y cerrarlo cuando finalice.
 
@@ -203,10 +203,10 @@ Perfil de usuario
 =================
 
 * Permitir actualizar la información del usuario autenticado:
-    - Nick
-    - País
-    - Ciudad (opcional)
-    - Contraseña
+  - Nick
+  - País
+  - Ciudad (opcional)
+  - Contraseña
 * Actualizar el país y ciudad cuando se cambian en los filtros principales de
   la plataforma.
 
@@ -215,7 +215,7 @@ Contacto
 
 * Permitir a los usuarios enviar un mensaje de contacto al Staff a través de
   un formulario con los siguientes campos:
-    - Email
-    - Asunto (opcional)
-    - Mensaje
+  - Email
+  - Asunto (opcional)
+  - Mensaje
 * Notificar a miembros autorizados del Staff cuando hay un nuevo mensaje.
