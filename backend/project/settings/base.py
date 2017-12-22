@@ -26,12 +26,13 @@ INTERNAL_IPS = (
     '0.0.0.0',
 )
 
-PROJECT_ALIAS = 'yourname'
-PROJECT_DISPLAY_NAME = 'Your Name'
+PROJECT_ALIAS = 'project'
+PROJECT_DISPLAY_NAME = 'Project'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'polymorphic',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
