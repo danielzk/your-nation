@@ -1,25 +1,46 @@
 from django.db import models
 from django.db.models import DateTimeField
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
-
-class TimeStampedModel(models.Model):
-    created_at = DateTimeField(_('Created at'), auto_now_add=True)
-    updated_at = DateTimeField(_('Updated at'), auto_now=True)
-
-    class Meta:
-        abstract = True
+from polymorphic import models as polymorphic_models
 
 
-class ValidationModel(models.Model):
-    class Meta:
-        abstract = True
-
+class ValidationModelMixin(object):
     def save(self, *args, **kwargs):
-        self.clean()
+        self.full_clean()
         super().save(*args, **kwargs)
 
 
-class BaseModel(TimeStampedModel, ValidationModel):
+class TimeStampedSaveModelMixin(object):
+    def save(self, *args, **kwargs):
+        if self.pk:
+            self.updated_at = now()
+        super().save(*args, **kwargs)
+
+
+class TimeStampedModel(TimeStampedSaveModelMixin, models.Model):
+    created_at = DateTimeField(_('Created at'), auto_now_add=True)
+    updated_at = DateTimeField(_('Updated at'), null=True, editable=False)
+
+    class Meta:
+        abstract = True
+
+
+class BaseModel(ValidationModelMixin, TimeStampedModel):
+    class Meta:
+        abstract = True
+
+
+class TimeStampedPolymorphicModel(TimeStampedSaveModelMixin,
+                                  polymorphic_models.PolymorphicModel):
+    created_at = DateTimeField(_('Created at'), auto_now_add=True)
+    updated_at = DateTimeField(_('Updated at'), null=True, editable=False)
+
+    class Meta:
+        abstract = True
+
+
+class BasePolymorphicModel(ValidationModelMixin, TimeStampedPolymorphicModel):
     class Meta:
         abstract = True
